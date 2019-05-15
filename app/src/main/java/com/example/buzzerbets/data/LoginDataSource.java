@@ -35,12 +35,14 @@ public class LoginDataSource {
                             }
                         }
                     });
+            Log.d("LoginDataSource", "fakeuser");
             LoggedInUser fakeUser =
                     new LoggedInUser(
                             java.util.UUID.randomUUID().toString(),
                             username);
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
+            Log.d("LoginDataSource", "exception?");
             return new Result.Error(new IOException("Error logging in", e));
         }
     }
